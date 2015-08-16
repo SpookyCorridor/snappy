@@ -1,9 +1,13 @@
-<%= form_for @pictures, :html => {:multipart => true} do |f| %> 
-	<%= f_error_messages %> 
-	<%= f.hidden_field :gallery_id %> 
+<%= form_for @picture, :html => {:multipart => true} do |f| %> 
+
+	<%= hidden_field_tag :gallery_id, @gallery_id.to_i %>
 	<p>
-		<%= f.label :name %> 
-		<%= f.text_field :name %> 
+		<%= f.label :title %> 
+		<%= f.text_field :title %> 
+	</p>
+	<p>
+		<%= f.label :description %> 
+		<%= f.text_field :description %> 
 	</p>
 	<p>
 		<%= f.file_field :image %> 

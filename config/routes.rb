@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'pictures/' => 'pictures#index'
   get 'pictures/new' => 'pictures#new'
-  post 'pictures/create' => 'pictures#create'
+  post 'pictures/' => 'pictures#create'
   post 'pictures/update' => 'pictures#update'
   patch 'pictures/delete' => 'pictures#delete'
   get 'pictures/confirmation' => 'pictures#confirmation'
