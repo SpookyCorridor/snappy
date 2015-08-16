@@ -2,7 +2,8 @@
 <ul> 
 <% @galleries.each do |gallery| %> 
 
-<li><%= link_to "show", gallery %></li>
+<li><%= gallery.title %>
+	<%= link_to 'gallery', gallery_path(gallery) %></li>
 
 <% end %> 
 

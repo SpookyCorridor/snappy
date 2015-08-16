@@ -1,4 +1,6 @@
 class GalleriesController < ApplicationController
+  
+  before_filter :authorize 
   def index
     @galleries = Gallery.all 
   end
@@ -9,13 +11,16 @@ class GalleriesController < ApplicationController
 
   def new
     @new_gallery = Gallery.new
+    @user = session[:user_id] 
   end
 
   def create
-    @new_gallery.new(gallery_params)
+    @new_gallery = Gallery.new(gallery_params)
 
-    if @gallery.save
-      redirect_to @new_gallery
+    if @new_gallery.save
+      puts @new_gallery 
+      puts 'gallery created'
+      redirect_to '/'
     else 
       render 'new'
     end 
@@ -28,6 +33,7 @@ class GalleriesController < ApplicationController
   end
 
   def confirmation
+
   end
 
   private 

@@ -1,2 +1,10 @@
-<h1>Galleries#new</h1>
-<p>Find me in app/views/galleries/new.html.erb</p>
+<h4>New Gallery</h4>
+
+<%= form_for @new_gallery, url: {action:'create'} do |f| %> 
+
+	Title: <%= f.text_field :title %> 
+	
+	<%= hidden_field_tag :user_id, @user %> 
+	<%= f.submit 'create gallery' %> 
+
+<% end %> 

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post 'galleries/update' => 'galleries#update'
   patch 'galleries/delete' => 'galleries#delete'
   get 'galleries/confirmation' => 'galleries#confirmation'
+  get 'galleries/:id', to: 'galleries#show', as: 'gallery'
 
   get 'users/register' => 'users#register'
   post 'users/confirmation' => 'users#confirmation'
