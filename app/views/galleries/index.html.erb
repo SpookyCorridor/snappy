@@ -5,6 +5,13 @@
 <li><%= gallery.title %>
 	<%= link_to 'gallery', gallery_path(gallery) %></li>
 
+	<li><%= form_for gallery, url: {action: 'delete'} do |f| %> 
+		<%= f.hidden_field :id %> 
+		<%= f.submit 'done' %>
+		<% end %> </li>
+
 <% end %> 
+
+<%= link_to 'new gallery', galleries_new_path %> 
 
 </ul>

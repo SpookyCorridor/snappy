@@ -30,6 +30,9 @@ class GalleriesController < ApplicationController
   end
 
   def delete
+    @gallery = Gallery.find(params[:gallery][:id].to_i)
+    @gallery.destroy 
+    redirect_to '/'
   end
 
   def confirmation
