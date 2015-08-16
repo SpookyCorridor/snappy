@@ -1,2 +1,8 @@
-<h1>Galleries#index</h1>
-<p>Find me in app/views/galleries/index.html.erb</p>
+<ul> 
+<% for @galleries.each do |gallery| %> 
+
+<li>link_to '<%=gallery.title%>', gallery</li>
+
+<% end %> 
+
+</ul>

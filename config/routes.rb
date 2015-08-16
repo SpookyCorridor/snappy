@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'galleries/index'
 
+  get 'galleries/show'
+
   get 'galleries/new'
 
   get 'galleries/create'

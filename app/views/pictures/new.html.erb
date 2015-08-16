@@ -1,2 +1,12 @@
-<h1>Pictures#new</h1>
-<p>Find me in app/views/pictures/new.html.erb</p>
+<%= form_for @pictures, :html => {:multipart => true} do |f| %> 
+	<%= f_error_messages %> 
+	<%= f.hidden_field :gallery_id %> 
+	<p>
+		<%= f.label :name %> 
+		<%= f.text_field :name %> 
+	</p>
+	<p>
+		<%= f.file_field :image %> 
+	</p>
+	<p><%= f.submit %></p>
+<% end %> 
