@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'pictures/index'
+
+  get 'pictures/new'
+
+  get 'pictures/create'
+
+  get 'pictures/update'
+
+  get 'pictures/delete'
+
+  get 'pictures/confirmation'
+
+  get 'galleries/index'
+
+  get 'galleries/new'
+
+  get 'galleries/create'
+
+  get 'galleries/update'
+
+  get 'galleries/delete'
+
+  get 'galleries/confirmation'
+
+  get 'users/register'
+
+  get 'users/confirmation'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
