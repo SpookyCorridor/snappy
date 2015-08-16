@@ -1,7 +1,8 @@
+<h4>Galleries</h4>
 <ul> 
-<% for @galleries.each do |gallery| %> 
+<% @galleries.each do |gallery| %> 
 
-<li>link_to '<%=gallery.title%>', gallery</li>
+<li><%= link_to "show", gallery %></li>
 
 <% end %> 
 

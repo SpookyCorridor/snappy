@@ -1,2 +1,16 @@
-<h1>Users#register</h1>
-<p>Find me in app/views/users/register.html.erb</p>
+<h4>Register</h4>
+
+<% if @message.nil? == false %> 
+
+	<span class="erro"><%= @message %></span>
+
+<% end %> 
+
+<%= form_for :user, url: 'confirmation' do |f| %> 
+
+	Name: <%= f.text_field :username %> 
+	Email: <%= f.text_field :email %> 
+	Password: <%= f.password_field :password %>
+	Confirm: <%= f.password_field :password_confirmation %> 
+	<%= f.submit 'create account' %> 
+<% end %>  

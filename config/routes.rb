@@ -1,33 +1,28 @@
 Rails.application.routes.draw do
-  get 'pictures/index'
+ 
+  root 'galleries#index'
+  
+  get 'users/login' => 'sessions#login'
+  post 'users/login_confirmation' => 'sessions#confirmation'
+  get 'users/logout' => 'sessions#logout'
 
-  get 'pictures/new'
+  get 'pictures/' => 'pictures#index'
+  get 'pictures/new' => 'pictures#new'
+  post 'pictures/create' => 'pictures#create'
+  post 'pictures/update' => 'pictures#update'
+  patch 'pictures/delete' => 'pictures#delete'
+  get 'pictures/confirmation' => 'pictures#confirmation'
 
-  get 'pictures/create'
+  get 'galleries/' => 'galleries#index'
+  get 'galleries/show' => 'galleries#show'
+  get 'galleries/new' => 'galleries#new'
+  post 'galleries/create' => 'galleries#create'
+  post 'galleries/update' => 'galleries#update'
+  patch 'galleries/delete' => 'galleries#delete'
+  get 'galleries/confirmation' => 'galleries#confirmation'
 
-  get 'pictures/update'
-
-  get 'pictures/delete'
-
-  get 'pictures/confirmation'
-
-  get 'galleries/index'
-
-  get 'galleries/show'
-
-  get 'galleries/new'
-
-  get 'galleries/create'
-
-  get 'galleries/update'
-
-  get 'galleries/delete'
-
-  get 'galleries/confirmation'
-
-  get 'users/register'
-
-  get 'users/confirmation'
+  get 'users/register' => 'users#register'
+  post 'users/confirmation' => 'users#confirmation'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
