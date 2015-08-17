@@ -1,6 +1,6 @@
 <%= form_for @picture, :html => {:multipart => true} do |f| %> 
 
-	<%= f.text_field :gallery_id %> 
+	<%= f.text_field :gallery_id, {:value => params[:gallery_id], :type => 'hidden' }%> 
 	<p>
 		<%= f.label :title %> 
 		<%= f.text_field :title %> 
