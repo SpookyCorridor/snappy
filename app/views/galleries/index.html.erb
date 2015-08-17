@@ -1,17 +1,21 @@
-<h4>Galleries</h4>
-<ul> 
-<% @galleries.each do |gallery| %> 
+<div class="row galleries">
+	<div class="eight columns offset-by-two">
+		<h4>Galleries</h4>
+		<ul> 
+		<% @galleries.each do |gallery| %> 
 
-<li><%= gallery.title %>
-	<%= link_to 'gallery', gallery_path(gallery) %></li>
+		<li><%= gallery.title %>
+			<%= link_to 'gallery', gallery_path(gallery) %></li>
 
-	<li><%= form_for gallery, url: {action: 'delete'} do |f| %> 
-		<%= f.hidden_field :id %> 
-		<%= f.submit 'done' %>
-		<% end %> </li>
+			<li><%= form_for gallery, url: {action: 'delete'} do |f| %> 
+				<%= f.hidden_field :id %> 
+				<%= f.submit 'delete', class: 'delete'%>
+				<% end %> </li>
 
-<% end %> 
+		<% end %> 
 
-<%= link_to 'new gallery', galleries_new_path %> 
+		<%= link_to 'new gallery', galleries_new_path %> 
 
-</ul>
+		</ul>
+	</div>
+</div>

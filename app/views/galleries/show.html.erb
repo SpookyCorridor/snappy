@@ -1,24 +1,28 @@
-<%= @gallery.title %> 
-
-<div id="picture">
-	<% @gallery.pictures.each do |picture| %>
-		<div class="picture">
-			<%= image_tag picture.image_url(:thumb).to_s %>
-		</div> 
-		<div class="picture-info">
-			<li>Title: <%= picture.title %></li>
-			<li>Description: <%= picture.description %></li>
-		</div> <br /> 
-		<div class="actions">
-			<%= form_for picture, url: {controller: 'pictures', action: 'delete'} do |f| %> 
-				<%= f.hidden_field :id %>
-				<%= f.submit 'delete' %>
-			<% end %>
+<div class="row gallery">
+	<div class="eight columns offset-by-two">
+		<h4><%= @gallery.title %> </h4>
+		
+			<div id="picture">
+				<% @gallery.pictures.each do |picture| %>
+					<div class="picture">
+						<%= image_tag picture.image_url(:thumb).to_s %>
+					</div> 
+					<div class="picture-info">
+						<li>Title: <%= picture.title %></li>
+						<li>Description: <%= picture.description %></li>
+					</div> <br /> 
+					<div class="actions">
+						<%= form_for picture, url: {controller: 'pictures', action: 'delete'} do |f| %> 
+							<%= f.hidden_field :id %>
+							<%= f.submit 'delete' %>
+						<% end %>
+					</div>
+			</div>
+			<% end %> 
+		
+			<p>
+				<%= link_to 'Add a picture', pictures_new_path(:gallery_id => @gallery) %> 
+				<%= link_to 'view galleries', galleries_path %> 
+			</p>
 		</div>
 </div>
-<% end %> 
-
-<p>
-	<%= link_to 'Add a picture', pictures_new_path(:gallery_id => @gallery) %> 
-	<%= link_to 'view galleries', galleries_path %> 
-</p>

@@ -1,16 +1,30 @@
-<h4>User login</h4>
 
-<% if @message.nil? == false %> 
 
-	<span class="error"><%= @message %></span>
+<div class="row login">
+	
 
-<% end %> 
+	<div class="eight columns offset-by-two">
+	<h4>User login</h4>
+	<% if @message.nil? == false %> 
 
-<%= form_tag '/users/login_confirmation' do %> 
-	Email: <%= text_field_tag :email %> 
-	Password: <%= password_field_tag :password %> 
+		<span class="error"><%= @message %></span>
 
-	<%= submit_tag 'login' %> 
-<% end %> 
+	<% end %> 
 
-<%= link_to 'register', users_register_path %> 
+	<%= form_tag '/users/login_confirmation' do %>
+	<p>
+		<%= label_tag :email %>  
+		<%= text_field_tag :email %> 
+		</p>
+		<p>
+		<%= label_tag :password %> 
+		<%= password_field_tag :password %> 
+	</p>
+	<p>
+		<%= submit_tag 'login' %> 
+		</p> 
+	<% end %> 
+
+	<%= link_to 'register', users_register_path %> 
+	</div>
+	</div>
