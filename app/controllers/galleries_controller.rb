@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   
-  before_filter :authorize 
+  before_action :authorize 
   def index
     @galleries = Gallery.all 
   end

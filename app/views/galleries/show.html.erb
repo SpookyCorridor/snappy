@@ -3,14 +3,16 @@
 <div id="picture">
 	<% @gallery.pictures.each do |picture| %>
 		<div class="picture">
-			<%= image_tag picture.image.to_s %> 
+			<%= image_tag picture.image_url(:thumb).to_s %> 
 		</div> 
-		<div class="title"><%= picture.title %></div>
+		<div class="picture-info">
+			<li>Title: <%= picture.title %></li>
+			<li>Description: <%= picture.description %></li>
+		</div> <br /> 
 		<div class="actions">
 			<%= link_to 'edit', pictures_update_path(picture) %> 
 			<%= form_for picture, url: {controller: 'pictures', action: 'delete'} do |f| %> 
-				<%= f.hidden_field :id %> 
-				<%= f.hidden_field :gallery_id %> 
+				<%= f.hidden_field :id %>
 				<%= f.submit 'delete' %>
 			<% end %>
 		</div>
