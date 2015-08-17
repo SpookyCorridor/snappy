@@ -18,7 +18,8 @@
 
 .login,
 .galleries,
-.gallery {
+.gallery,
+.new-picture {
 	text-align: center;
 }
 
@@ -38,3 +39,15 @@ input[type="submit"].delete {
 li {
 	list-style: none;
 }
+
+.picture-info>li {
+	background-color: #E6E8E8; 
+	padding: 10px;
+}
+.picture-info>li:first-child {
+	font-weight: bold;
+}
+
+
+
+

@@ -7,19 +7,19 @@
 					<div class="picture">
 						<%= image_tag picture.image_url(:thumb).to_s %>
 					</div> 
-					<div class="picture-info">
-						<li>Title: <%= picture.title %></li>
-						<li>Description: <%= picture.description %></li>
-					</div> <br /> 
+			</div>		
+
+			<div class="picture-info">
+						<li><%= picture.title %></li>
+						<li><%= picture.description %></li>
+			</div> <br /> 
 					<div class="actions">
 						<%= form_for picture, url: {controller: 'pictures', action: 'delete'} do |f| %> 
 							<%= f.hidden_field :id %>
 							<%= f.submit 'delete' %>
 						<% end %>
 					</div>
-			</div>
-			<% end %> 
-		
+		<% end %> 
 			<p>
 				<%= link_to 'Add a picture', pictures_new_path(:gallery_id => @gallery) %> 
 				<%= link_to 'view galleries', galleries_path %> 

@@ -1,21 +1,26 @@
-<%= form_for @picture, :html => {:multipart => true} do |f| %> 
+<div class="row new-picture">
+	<div class="eight columns offset-by-two">
+		<h4>new picture</h4>
+		<%= form_for @picture, :html => {:multipart => true} do |f| %> 
+		
+		<%= f.text_field :gallery_id, {:value => params[:gallery_id], :type => 'hidden' }%> 
+		<p>
+			<%= f.label :title %> 
+			<%= f.text_field :title %> 
+		</p>
+		<p>
+			<%= f.label :description %> 
+			<%= f.text_field :description %> 
+		</p>
+		<p>
+			<%= f.file_field :image %> 
+		</p>
 
-	<%= f.text_field :gallery_id, {:value => params[:gallery_id], :type => 'hidden' }%> 
-	<p>
-		<%= f.label :title %> 
-		<%= f.text_field :title %> 
-	</p>
-	<p>
-		<%= f.label :description %> 
-		<%= f.text_field :description %> 
-	</p>
-	<p>
-		<%= f.file_field :image %> 
-	</p>
-
-	<p>
-		<%= f.label :remote_image_url, 'or img url (not working correctly..?)' %> 
-		<%= f.text_field :remote_image_url %> 
-	</p>
-	<p><%= f.submit %></p>
-<% end %> 
+		<p>
+			<%= f.label :remote_image_url, 'or img url (not working correctly..?)' %> 
+			<%= f.text_field :remote_image_url %> 
+		</p>
+		<p><%= f.submit %></p>
+		<% end %> 
+	</div>
+</div>
