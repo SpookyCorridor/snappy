@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
 
   def new
     @picture = Picture.new 
-    @gallery_id = params[:gallery_id]
+    @gallery_id = params[:gallery_id].to_i 
     puts @gallery_id
   end
 
@@ -13,8 +13,11 @@ class PicturesController < ApplicationController
     @picture = Picture.create(picture_params)
 
     if @picture.save
-      puts @picture
-      redirect_to gallery_path(params[:gallery_id])
+      puts @picture.gallery_id
+      puts '****____*****'
+      puts params[:picture][:gallery_id]
+      puts '****____*****'
+      redirect_to gallery_path(@picture.gallery_id)
     else 
       render 'new' 
     end 
@@ -24,6 +27,10 @@ class PicturesController < ApplicationController
   end
 
   def delete
+    @picture = Picture.find(params[:picture][:id].to_i)
+    @gallery = @picture.gallery_id
+    @picture.destroy 
+    redirect_to gallery_path(@gallery )
   end
 
   def confirmation
